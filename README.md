@@ -2,7 +2,7 @@
 
 ## How To Use
 ```
-ansible-playbook ansible-nginx/playbook.yml -i ansible-nginx/environment/production -e "@ansible-nginx/environment/production/group_vars/server.yml" --user ubuntu
+ansible-playbook ansible_nginx/playbook.yml -i ansible_nginx/environment/production -e "@ansible_nginx/environment/production/group_vars/server.yml" --user ubuntu
 ```
 
 
@@ -18,8 +18,4 @@ ec2, saya g peduli, pokoknya harus bisa
 
 
 - ansible akan install nginx
-
-sudo apt install ansible
-clone repo
-
-kita bikin resep, apa yg mau dilakukan
+- ansible setup index.html
