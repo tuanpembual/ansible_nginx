@@ -1,0 +1,28 @@
+---
+# tasks file
+- name: Check Environment
+  debug: msg="reading from {{ env_name }}"
+
+- name: Install a list of packages
+  apt:
+    pkg:
+    - nginx
+    - curl
+    - net-tools
+  become: yes
+  notify:
+    - restart nginx
+
+# copy index.html
+#copy file dari ansible ke server
+- name: copy index.html
+  copy:
+    src: "files/index.html"
+    dest: "/var/www/html/index.html"
+  become: yes
+
+- name: delete default index
+  file:
+    path: /var/www/html/index.nginx-debian.html
+    state: absent
+  become: yes
